@@ -2,6 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { PlaySquare } from 'lucide-react'
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from '@/components/ui/context-menu'
+import { Slider } from '@/components/ui/slider'
 
 export default function SoundEffect({
   filename,
@@ -10,8 +17,9 @@ export default function SoundEffect({
   filename: string
   title: string
 }) {
-  const audioRef = useRef<HTMLAudioElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [volume, setVolume] = useState(50)
+  const audioRef = useRef<HTMLAudioElement>(null)
   const path = `/sounds/${filename}`
 
   const playPause = () => {
@@ -20,6 +28,7 @@ export default function SoundEffect({
 
   useEffect(() => {
     if (!audioRef.current) return
+    audioRef.current.volume = volume / 100
 
     if (isPlaying) {
       audioRef.current.play()
@@ -30,18 +39,39 @@ export default function SoundEffect({
   }, [isPlaying, audioRef])
 
   return (
-    <div
-      className="p-4 py-6 flex flex-col items-center shadow-sm md:shadow-md border-2 rounded-lg cursor-pointer"
-      onClick={playPause}
-    >
-      <audio src={path} ref={audioRef} />
-      {isPlaying ? (
-        <PauseSquare size={40} strokeWidth={1.25} />
-      ) : (
-        <PlaySquare size={40} strokeWidth={1.25} />
-      )}
-      <h2 className="mt-2 font-bold">{title}</h2>
-    </div>
+    <ContextMenu>
+      <ContextMenuTrigger>
+        <div
+          className="p-4 py-6 flex flex-col items-center shadow-sm md:shadow-md border-2 rounded-lg cursor-pointer"
+          onClick={playPause}
+        >
+          <audio src={path} ref={audioRef} />
+          {isPlaying ? (
+            <PauseSquare size={40} strokeWidth={1.25} />
+          ) : (
+            <PlaySquare size={40} strokeWidth={1.25} />
+          )}
+          <h2 className="mt-2 font-bold">{title}</h2>
+        </div>
+      </ContextMenuTrigger>
+      <ContextMenuContent>
+        <ContextMenuItem>
+          <Slider
+            defaultValue={[33]}
+            max={100}
+            step={1}
+            value={[volume]}
+            onValueChange={(v) => {
+              setVolume(v[0])
+
+              if (audioRef.current) {
+                audioRef.current.volume = v[0] / 100
+              }
+            }}
+          />
+        </ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
   )
 }
 
