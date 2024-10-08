@@ -9,7 +9,7 @@ export default function Home() {
       </h1>
       <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {sounds.map((sound) => (
-          <li>
+          <li key={sound.filename}>
             <SoundEffect title={sound.title} filename={sound.filename} />
           </li>
         ))}
