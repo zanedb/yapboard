@@ -28,13 +28,13 @@ export default function SoundEffect({
 
   useEffect(() => {
     if (!audioRef.current) return
-    audioRef.current.volume = volume / 100
+    audioRef.current.volume = volume / 100 // Update volume on load
 
     if (isPlaying) {
       audioRef.current.play()
     } else {
       audioRef.current.pause()
-      audioRef.current.currentTime = 0
+      audioRef.current.currentTime = 0 // Restart sound
     }
   }, [isPlaying, audioRef])
 
