@@ -1,19 +1,23 @@
 [
   {
-    "title": "Applause",
-    "filename": "applause.mp3"
-  },
-  {
-    "title": "See You Again",
-    "filename": "seeyouagain.mp3"
-  },
-  {
     "title": "Intro",
     "filename": "intro.wav"
   },
   {
     "title": "Promo",
     "filename": "promo.wav"
+  },
+  {
+    "title": "Ad Read",
+    "filename": "ADREAD.mp3"
+  },
+  {
+    "title": "Applause",
+    "filename": "applause.mp3"
+  },
+  {
+    "title": "See You Again",
+    "filename": "seeyouagain.mp3"
   },
   {
     "title": "Vine Boom",
@@ -32,7 +36,55 @@
     "filename": "fart.mp3"
   },
   {
+    "title": "Fart (with reverb)",
+    "filename": "FARTWITHREVERB.mp3"
+  },
+  {
     "title": "Bratz",
     "filename": "bratz.mp3"
+  },
+  {
+    "title": "Letter to LeBron",
+    "filename": "LEBRON.mp3"
+  },
+  {
+    "title": "Breaking News",
+    "filename": "BREAKINGNEWS.mp3"
+  },
+  {
+    "title": "Gah DAYUM",
+    "filename": "GAHDAYUM.mp3"
+  },
+  {
+    "title": "Harp",
+    "filename": "HARP.mp3"
+  },
+  {
+    "title": "Oh Hell Nah!",
+    "filename": "OHHELLNAH.mp3"
+  },
+  {
+    "title": "PLUG",
+    "filename": "PLUG.mp3"
+  },
+  {
+    "title": "Prowler",
+    "filename": "PROWLER.mp3"
+  },
+  {
+    "title": "Rizz",
+    "filename": "RIZZ.mp3"
+  },
+  {
+    "title": "Scary Bell",
+    "filename": "SCARYBELL.mp3"
+  },
+  {
+    "title": "SpongeBob (Stinky)",
+    "filename": "SPONGEBOBSTINKY.mp3"
+  },
+  {
+    "title": "Ultra Instinct",
+    "filename": "ULTRAINSTINCT.mp3"
   }
 ]
